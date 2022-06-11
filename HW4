@@ -1,0 +1,15 @@
+rm(list = ls())
+library(R.utils)
+
+url <- "https://database.lichess.org/lichess_db_puzzle.csv.bz2"
+destfile <- "./download/puzzles.csv.bz2"
+
+
+if(!file.exists("./download/puzzles.csv.bz2")) {
+  dir.create("./download")  
+  download.file(url,destfile=destfile)
+}
+
+
+puzzles <- read.csv(bzfile(destfile))
+head(puzzles)
