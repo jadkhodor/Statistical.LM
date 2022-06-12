@@ -36,6 +36,7 @@ else:
 puzzles = pandas.read_csv(final_filename, names = header)
 print(puzzles.head())
 
+
 #####5
 plays_median = stat.median(puzzles.NbPlays)
 rating_low = 1500
